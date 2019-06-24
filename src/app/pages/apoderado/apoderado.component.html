@@ -1,4 +1,4 @@
-<mat-toolbar>Pacientes</mat-toolbar>
+<mat-toolbar>Apoderados</mat-toolbar>
 
 <div class="example-container mat-elevation-z8">
 
@@ -16,19 +16,19 @@
       <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="nombres">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.nombres}}</mat-cell>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="apelidopa">
+    <ng-container matColumnDef="paternalLastname">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Apellido Paterno </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.apelidopa}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.paternalLastname}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="apelidoma">
+    <ng-container matColumnDef="maternalLastname">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Apellido Materno </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.apellidoma}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.maternalLastname}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="phone">
@@ -57,6 +57,6 @@
 
 <br>
 
-<button mat-fab color="accent" style="float: right" routerLink='/paciente/nuevo'>
+<button mat-fab color="accent" style="float: right" routerLink='/apoderado/nuevo'>
   <mat-icon>create</mat-icon>
 </button>

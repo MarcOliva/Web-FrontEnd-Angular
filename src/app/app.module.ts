@@ -13,6 +13,8 @@ import { EstudianteEdicionComponent } from './pages/estudiante/estudiante-edicio
 import { ApoderadoEdicionComponent } from './pages/apoderado/apoderado-edicion/apoderado-edicion.component';
 import { NivelEducativoComponent } from './pages/nivel-educativo/nivel-educativo.component';
 import { NivelEducativoEdicionComponent } from './pages/nivel-educativo/nivel-educativo-edicion/nivel-educativo-edicion.component';
+import { ProfesorComponent } from './pages/profesor/profesor.component';
+import { ProfesorEdicionComponent } from './pages/profesor/profesor-edicion/profesor-edicion.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NivelEducativoEdicionComponent } from './pages/nivel-educativo/nivel-ed
     EstudianteEdicionComponent,
     ApoderadoEdicionComponent,
     NivelEducativoComponent,
-    NivelEducativoEdicionComponent
+    NivelEducativoEdicionComponent,
+    ProfesorComponent,
+    ProfesorEdicionComponent
   ],
   imports: [
     BrowserModule,

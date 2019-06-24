@@ -8,13 +8,13 @@ import { ApoderadoEdicionComponent } from './pages/apoderado/apoderado-edicion/a
 const routes: Routes = [
 
   {
-    path: 'student', component: EstudianteComponent, children: [
+    path: 'estudiante', component: EstudianteComponent, children: [
       { path: 'nuevo', component: EstudianteEdicionComponent },
       { path: 'edicion/:id', component: EstudianteEdicionComponent }
     ]
   },
   {
-    path: 'empowered', component: ApoderadoComponent, children: [
+    path: 'apoderado', component: ApoderadoComponent, children: [
       { path: 'nuevo', component: ApoderadoEdicionComponent },
       { path: 'edicion/:id', component: ApoderadoEdicionComponent }
     ]
