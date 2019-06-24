@@ -8,7 +8,7 @@ import { EducationDegree } from '../_model/nivelEducativo';
     providedIn: 'root'
 })
 export class NivelEducativo {
-    url: string = `${HOST}/estudiantes`;
+    url: string = `${HOST}niveleducativo`;
     nivelEduactivoCambio = new Subject<EducationDegree[]>();
     mensaje = new Subject<string>();
 

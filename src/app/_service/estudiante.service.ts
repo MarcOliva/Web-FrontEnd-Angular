@@ -3,13 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { HOST } from './../_shared/var.constant';
 import { Injectable } from '@angular/core';
 import { Student } from '../_model/estudiante';
-
 @Injectable({
     providedIn: 'root'
 })
 export class EstudianteService {
-    url: string = `${HOST}/estudiantes`;
-    estudianteCambio = new Subject<Student[]>();
+
+    url: string = `${HOST}estudiantes`;
+    estudiantesCambio = new Subject<Student[]>();
     mensaje = new Subject<string>();
 
     constructor(private http: HttpClient) { }

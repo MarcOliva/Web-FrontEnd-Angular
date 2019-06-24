@@ -1,4 +1,4 @@
-<mat-toolbar>Estudiantes</mat-toolbar>
+<mat-toolbar>Profesores</mat-toolbar>
 
 <div class="example-container mat-elevation-z8">
 
@@ -6,12 +6,12 @@
 
   <div class="example-header">
     <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar apoderado">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar profesor">
     </mat-form-field>
   </div>
 
   <mat-table [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="idEstudiante">
+    <ng-container matColumnDef="idProfesor">
       <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
     </ng-container>
@@ -31,10 +31,15 @@
       <mat-cell *matCellDef="let row"> {{row.maternalLastname}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="dni">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> DNI </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.dni}} </mat-cell>
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Telefono </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.phone}} </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="educationDegree">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nivel Educativo </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.educationDegree}} </mat-cell>
+    </ng-container>
+
 
     <ng-container matColumnDef="acciones">
       <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
@@ -57,6 +62,6 @@
 
 <br>
 
-<button mat-fab color="accent" style="float: right" routerLink='/estudiante/nuevo'>
+<button mat-fab color="accent" style="float: right" routerLink='/profesor/nuevo'>
   <mat-icon>create</mat-icon>
 </button>

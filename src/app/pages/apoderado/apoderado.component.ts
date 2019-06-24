@@ -10,7 +10,7 @@ import { ApoderadoService } from 'src/app/_service/apoderado.service';
 })
 export class ApoderadoComponent implements OnInit {
 
-  displayedColumns = ['idApoderado', 'nombres', 'apellidopa', 'apellidoma', 'phone', 'acciones'];
+  displayedColumns = ['idApoderado', 'name', 'paternalLastname', 'maternalLastname', 'phone', 'acciones'];
   dataSource: MatTableDataSource<Empowered>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -30,18 +30,12 @@ export class ApoderadoComponent implements OnInit {
       this.snackBar.open(data, 'Aviso', { duration: 2000 });
     });
 
-    // this.apoderadoService.listar().subscribe(data => {
-    //   this.dataSource = new MatTableDataSource(data);
-    //   this.dataSource.paginator = this.paginator;
-    //   this.dataSource.sort = this.sort;
-    // });
-    this.apoderadoService.listarPageable(0, 10).subscribe(data => {
-      console.log(data);
-      let apoderados = JSON.parse(JSON.stringify(data)).content;
-      this.cantidad = JSON.parse(JSON.stringify(data)).totalElements;
-      this.dataSource = new MatTableDataSource(apoderados);
+    this.apoderadoService.listar().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
+
   }
 
   applyFilter(filterValue: string) {
@@ -49,8 +43,8 @@ export class ApoderadoComponent implements OnInit {
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
-  eliminar(idPaciente: number) {
-    this.apoderadoService.eliminar(idPaciente).subscribe(data => {
+  eliminar(idApoderado: number) {
+    this.apoderadoService.eliminar(idApoderado).subscribe(data => {
       this.apoderadoService.listar().subscribe(data => {
         this.apoderadoService.apoderadosCambio.next(data);
         this.apoderadoService.mensaje.next('Se eliminó');
@@ -60,7 +54,7 @@ export class ApoderadoComponent implements OnInit {
 
   mostrarMas(e: any) {
     console.log(e);
-    this.apoderadoService.listarPageable(e.pageIndex, e.pageSize).subscribe(data => {
+    this.apoderadoService.listar().subscribe(data => {
       console.log(data);
       let apoderados = JSON.parse(JSON.stringify(data)).content;
       this.cantidad = JSON.parse(JSON.stringify(data)).totalElements;

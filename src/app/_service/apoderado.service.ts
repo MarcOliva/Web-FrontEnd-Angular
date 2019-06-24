@@ -9,7 +9,7 @@ import { Empowered } from '../_model/apoderado';
 })
 export class ApoderadoService {
 
-    url: string = `${HOST}/apoderados`;
+    url: string = `${HOST}apoderados`;
     apoderadosCambio = new Subject<Empowered[]>();
     mensaje = new Subject<string>();
 
