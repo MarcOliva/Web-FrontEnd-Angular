@@ -25,8 +25,13 @@ import { ProfesorEdicionComponent } from './pages/profesor/profesor-edicion/prof
     ApoderadoEdicionComponent,
     NivelEducativoComponent,
     NivelEducativoEdicionComponent,
+<<<<<<< HEAD
     ProfesorComponent,
     ProfesorEdicionComponent
+=======
+    CursoComponent,
+    CursoEdicionComponent
+>>>>>>> 5b43af76c6fbf8762d5ccfafe439d252d234ab1b
   ],
   imports: [
     BrowserModule,
