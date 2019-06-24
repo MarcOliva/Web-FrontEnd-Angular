@@ -1,7 +1,7 @@
 import { Empowered } from './apoderado';
 import { EducationDegree } from './nivelEducativo';
 
-export class Estudiante {
+export class Student {
     public id: number;
     public name: string;
     public paternalLastname: string;

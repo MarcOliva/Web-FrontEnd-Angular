@@ -2,31 +2,31 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { HOST } from './../_shared/var.constant';
 import { Injectable } from '@angular/core';
-import { Student } from '../_model/estudiante';
+import { EducationDegree } from '../_model/nivelEducativo';
 
 @Injectable({
     providedIn: 'root'
 })
-export class EstudianteService {
+export class NivelEducativo {
     url: string = `${HOST}/estudiantes`;
-    estudiantesCambio = new Subject<Student[]>();
+    nivelEduactivoCambio = new Subject<EducationDegree[]>();
     mensaje = new Subject<string>();
 
     constructor(private http: HttpClient) { }
 
     listar() {
-        return this.http.get<Student[]>(this.url);
+        return this.http.get<EducationDegree[]>(this.url);
     }
 
-    listarEstudiantePorId(id: number) {
-        return this.http.get<Student>(`${this.url}/${id}`);
+    listarNivelesPorId(id: number) {
+        return this.http.get<EducationDegree>(`${this.url}/${id}`);
     }
 
-    registrar(estudiante: Student) {
+    registrar(estudiante: EducationDegree) {
         return this.http.post(this.url, estudiante);
     }
 
-    modificar(estudiante: Student) {
+    modificar(estudiante: EducationDegree) {
         return this.http.put(this.url, estudiante);
     }
 

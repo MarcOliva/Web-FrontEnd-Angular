@@ -19,8 +19,11 @@ export class ApoderadoService {
         return this.http.get<Empowered[]>(this.url);
     }
 
-    listarMedicoPorId(id: number) {
+    listarApoderadoPorId(id: number) {
         return this.http.get<Empowered>(`${this.url}/${id}`);
+    }
+    listarPageable(p: number, s: number) {
+        return this.http.get<Empowered[]>(`${this.url}/pageable?page=${p}&size=${s}`);
     }
 
     registrar(apoderado: Empowered) {
