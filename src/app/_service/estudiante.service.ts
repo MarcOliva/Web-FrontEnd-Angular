@@ -9,7 +9,7 @@ import { Student } from '../_model/estudiante';
 })
 export class EstudianteService {
     url: string = `${HOST}/estudiantes`;
-    estudiantesCambio = new Subject<Student[]>();
+    estudianteCambio = new Subject<Student[]>();
     mensaje = new Subject<string>();
 
     constructor(private http: HttpClient) { }
