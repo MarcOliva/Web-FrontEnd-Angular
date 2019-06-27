@@ -1,4 +1,4 @@
-<mat-card>Ingrese los datos del profesor</mat-card>
+<mat-card>Ingrese los datos del curso</mat-card>
 
 <br>
 
@@ -12,27 +12,7 @@
   </div>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Name" required formControlName="name">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Apellido Paterno" required formControlName="paternalLastname">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Apellidos Materno" required formControlName="maternalLastname">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="DNI" required formControlName="dni" type="number">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Email" required formControlName="email">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Teléfono" required formControlName="phone" type="number">
+    <input matInput placeholder="Nombre" required formControlName="nombre">
   </mat-form-field>
 
   <form>
@@ -52,7 +32,7 @@
     <mat-icon>done</mat-icon>
     <span>Aceptar</span>
   </button>
-  <button mat-raised-button color="accent" routerLink='/profesor' type="button">
+  <button mat-raised-button color="accent" routerLink='/curso' type="button">
     <mat-icon>close</mat-icon>
     <span>Cancelar</span>
   </button>

@@ -8,7 +8,7 @@ import { Student } from '../_model/estudiante';
 })
 export class EstudianteService {
 
-    url: string = `${HOST}estudiantes`;
+    url: string = `${HOST}alumnos`;
     estudiantesCambio = new Subject<Student[]>();
     mensaje = new Subject<string>();
 
