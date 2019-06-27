@@ -35,7 +35,7 @@ import { AsistenciaEdicionComponent } from './pages/asistencia/asistencia-edicio
     NivelEducativoComponent,
     NivelEducativoEdicionComponent,
     CalificacionComponent,
-    CalificacionEdicionComponent
+    CalificacionEdicionComponent,
 
     ProfesorComponent,
     ProfesorEdicionComponent,
