@@ -19,11 +19,13 @@ export class ApoderadoEdicionComponent implements OnInit {
     private apoderadoService: ApoderadoService) {
     this.form = new FormGroup({
       'id': new FormControl(0),
-      'nombres': new FormControl(''),
-      'apellidos': new FormControl(''),
+      'name': new FormControl(''),
+      'paternalLastname': new FormControl(''),
+      'maternalLastname': new FormControl(''),
+      'email': new FormControl(''),
       'dni': new FormControl(''),
-      'direccion': new FormControl(''),
-      'telefono': new FormControl('')
+      'phone': new FormControl(''),
+      'birthdate': new FormControl('')
     });
   }
 
@@ -42,9 +44,9 @@ export class ApoderadoEdicionComponent implements OnInit {
       this.apoderadoService.listarApoderadoPorId(this.id).subscribe(data => {
         this.form = new FormGroup({
           'id': new FormControl(data.id),
-          'nombres': new FormControl(data.name),
-          'apellidopa': new FormControl(data.paternalLastname),
-          'apellidoma': new FormControl(data.maternalLastname),
+          'name': new FormControl(data.name),
+          'paternalLastname': new FormControl(data.paternalLastname),
+          'maternalLastname': new FormControl(data.maternalLastname),
           'email': new FormControl(data.email),
           'dni': new FormControl(data.dni),
           'phone': new FormControl(data.phone),
@@ -57,8 +59,8 @@ export class ApoderadoEdicionComponent implements OnInit {
   operar() {
     this.apoderado.id = this.form.value['id'];
     this.apoderado.name = this.form.value['name'];
-    this.apoderado.paternalLastname = this.form.value['apellidopa'];
-    this.apoderado.maternalLastname = this.form.value['apellidoma'];
+    this.apoderado.paternalLastname = this.form.value['paternalLastname'];
+    this.apoderado.maternalLastname = this.form.value['maternalLastname'];
     this.apoderado.email = this.form.value['email'];
     this.apoderado.dni = this.form.value['dni'];
     this.apoderado.phone = this.form.value['phone'];
@@ -75,6 +77,7 @@ export class ApoderadoEdicionComponent implements OnInit {
       );
 
     } else {
+
       this.apoderadoService.registrar(this.apoderado).subscribe(
         data => {
           this.apoderadoService.listar().subscribe(apoderados => {
