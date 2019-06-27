@@ -15,6 +15,8 @@ import { NivelEducativoComponent } from './pages/nivel-educativo/nivel-educativo
 import { NivelEducativoEdicionComponent } from './pages/nivel-educativo/nivel-educativo-edicion/nivel-educativo-edicion.component';
 import { CursoComponent } from './pages/curso/curso.component';
 import { CursoEdicionComponent } from './pages/curso/curso-edicion/curso-edicion.component';
+import { CalificacionComponent } from './pages/calificacion/calificacion.component';
+import { CalificacionEdicionComponent } from './pages/calificacion/calificacion-edicion/calificacion-edicion.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CursoEdicionComponent } from './pages/curso/curso-edicion/curso-edicion
     NivelEducativoComponent,
     NivelEducativoEdicionComponent,
     CursoComponent,
-    CursoEdicionComponent
+    CursoEdicionComponent,
+    CalificacionComponent,
+    CalificacionEdicionComponent
   ],
   imports: [
     BrowserModule,

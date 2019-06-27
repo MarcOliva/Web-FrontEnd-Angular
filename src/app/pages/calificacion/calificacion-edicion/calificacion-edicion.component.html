@@ -1,0 +1,45 @@
+<mat-card>Ingrese los datos de la calificación</mat-card>
+
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmCalificacion="ngForm">
+
+  <div [hidden]="true">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="ID" required formControlName="id">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Tipo de evaluación" required formControlName="type">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nota" required formControlName="score">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Curso" [(value)]="idCursoSeleccionado">
+      <mat-option *ngFor="let c of cursos" [value]="c.id">{{c.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Profesor" [(value)]="idProfesorSeleccionado">
+      <mat-option *ngFor="let p of profesores" [value]="p.id">{{p.name }} {{p.paternalLastname}} {{p.maternalLastname}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Estudiante" [(value)]="idEstudianteSeleccionado">
+      <mat-option *ngFor="let a of estudiantes" [value]="a.id">{{a.name}} {{a.paternalLastname}} {{a.maternalLastname}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" >
+    <mat-icon>done</mat-icon>
+    <span>Aceptar</span>
+  </button>
+  <button mat-raised-button color="accent" routerLink='/course' type="button">
+    <mat-icon>close</mat-icon>
+    <span>Cancelar</span>
+  </button>
+</form>

@@ -6,6 +6,8 @@ import { ApoderadoComponent } from './pages/apoderado/apoderado.component';
 import { ApoderadoEdicionComponent } from './pages/apoderado/apoderado-edicion/apoderado-edicion.component';
 import { CursoComponent } from './pages/curso/curso.component';
 import { CursoEdicionComponent } from './pages/curso/curso-edicion/curso-edicion.component';
+import { CalificacionComponent } from './pages/calificacion/calificacion.component';
+import { CalificacionEdicionComponent } from './pages/calificacion/calificacion-edicion/calificacion-edicion.component';
 
 const routes: Routes = [
 
@@ -25,6 +27,12 @@ const routes: Routes = [
     path: 'course', component: CursoComponent, children: [
       { path: 'nuevo', component: CursoEdicionComponent },
       { path: 'edicion/:id', component: CursoEdicionComponent }
+    ]
+  },
+  {
+    path: 'qualification', component: CalificacionComponent, children: [
+      { path: 'nuevo', component: CalificacionEdicionComponent },
+      { path: 'edicion/:id', component: CalificacionEdicionComponent }
     ]
   },
 ];
