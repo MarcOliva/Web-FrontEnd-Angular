@@ -1,8 +1,11 @@
-<mat-card>Ingrese los datos de la calificación</mat-card>
+
+<mat-card>Ingrese los datos del curso</mat-card>
 
 <br>
 
-<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmCalificacion="ngForm">
+
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmPaciente="ngForm">
+
 
   <div [hidden]="true">
     <mat-form-field class="example-full-width">
@@ -11,52 +14,31 @@
   </div>
 
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Tipo de evaluación" required formControlName="type">
-  </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Nota asignada" required formControlName="score">
+    <input matInput placeholder="Nombre" required formControlName="nombre">
   </mat-form-field>
 
   <form>
-    <h4>Curso</h4>
+    <h4>Grado Educativo</h4>
     <mat-form-field>
-      <mat-label>{{idCursoSeleccionadoText}}</mat-label>
-      <mat-select [(ngModel)]="idCursoSeleccionado" name="curso">
-        <mat-option *ngFor="let c of cursos" [value]="curso.id">
-          {{c.name}}
+      <mat-label>{{selectedNivelText}}</mat-label>
+      <mat-select [(ngModel)]="selectedNivel" name="grado">
+        <mat-option *ngFor="let grado of nivelesEducativos" [value]="grado.id">
+          {{grado.grade}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+  </form>
 
-  <form>
-    <h4>Profesor</h4>
-    <mat-form-field>
-      <mat-label>{{idProfesorSeleccionadoText}}</mat-label>
-      <mat-select [(ngModel)]="idProfesorSeleccionado" name="profesor">
-        <mat-option *ngFor="let p of profesores" [value]="profesor.id">
-          {{a.name}} {{a.paternalLastname}} {{a.maternalLastname}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <form>
-    <h4>Estudiante</h4>
-    <mat-form-field>
-      <mat-label>{{idEstudianteSeleccionadoText}}</mat-label>
-      <mat-select [(ngModel)]="idEstudianteSeleccionado" name="estudiante">
-        <mat-option *ngFor="let e of estudiantes" [value]="estudiante.id">
-          {{e.name}} {{e.paternalLastname}} {{e.maternalLastname}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
 
   <!-- <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">-->
   <button mat-raised-button color="primary" type="submit">
     <mat-icon>done</mat-icon>
     <span>Aceptar</span>
   </button>
-  <button mat-raised-button color="accent" routerLink='/estudiante' type="button">
+
+  <button mat-raised-button color="accent" routerLink='/curso' type="button">
+
     <mat-icon>close</mat-icon>
     <span>Cancelar</span>
   </button>

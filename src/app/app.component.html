@@ -67,6 +67,16 @@
         <mat-icon>assessment</mat-icon>
         <span>Reportes</span>
       </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/curso" style="cursor: pointer">
+        <mat-icon>insert_drive_file</mat-icon>
+        <span>Curso</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/asistencia" style="cursor: pointer">
+        <mat-icon>insert_drive_file</mat-icon>
+        <span>Asistencia</span>
+      </button>
     </mat-sidenav>
 
     <mat-sidenav-content>

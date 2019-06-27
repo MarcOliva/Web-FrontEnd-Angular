@@ -11,7 +11,7 @@ import { CourseService } from 'src/app/_service/curso.service';
 export class CursoComponent implements OnInit {
 
   dataSource: MatTableDataSource<Course>;
-  displayedColumns = ['idCurso', 'nombre', 'nivelEducativo'];
+  displayedColumns = ['idCurso', 'nombre', 'nivelEducativo', 'acciones'];
   constructor(private cursoService: CourseService, private dialog: MatDialog, private snackBar: MatSnackBar) {
 
   }

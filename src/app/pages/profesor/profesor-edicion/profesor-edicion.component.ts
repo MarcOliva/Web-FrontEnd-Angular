@@ -3,6 +3,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Teacher } from 'src/app/_model/profesor';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ProfesorService } from 'src/app/_service/profesor.service';
+import { EducationDegree } from 'src/app/_model/nivelEducativo';
+import { NivelEducativoService } from 'src/app/_service/nivelEducativo.service';
 
 @Component({
   selector: 'app-profesor-edicion',
@@ -15,8 +17,13 @@ export class ProfesorEdicionComponent implements OnInit {
   form: FormGroup;
   edicion: boolean = false;
   profesor: Teacher;
+
+  selectedNivel: number;
+  selectedNivelText: string;
+
+  nivelesEducativos: EducationDegree[];
   constructor(private route: ActivatedRoute, private router: Router,
-    private profesorService: ProfesorService) {
+    private profesorService: ProfesorService, private nivelesEducativosService: NivelEducativoService) {
     this.form = new FormGroup({
       'id': new FormControl(0),
       'name': new FormControl(''),
@@ -27,6 +34,10 @@ export class ProfesorEdicionComponent implements OnInit {
       'phone': new FormControl(''),
       'educationDegree': new FormControl('')
     });
+    this.nivelesEducativosService.listar().subscribe((data) => {
+      this.nivelesEducativos = data;
+      console.log(this.nivelesEducativos)
+    })
   }
 
   ngOnInit() {
@@ -50,13 +61,17 @@ export class ProfesorEdicionComponent implements OnInit {
           'email': new FormControl(data.email),
           'dni': new FormControl(data.dni),
           'phone': new FormControl(data.phone),
-          'educationDegree': new FormControl(data.educationDegree),
         });
+        this.selectedNivel = data.educationDegree.id;
+        this.selectedNivelText = data.educationDegree.grade;
+
       });
     }
   }
 
   operar() {
+    let nivel = new EducationDegree();
+    nivel.id = this.selectedNivel;
     this.profesor.id = this.form.value['id'];
     this.profesor.name = this.form.value['name'];
     this.profesor.paternalLastname = this.form.value['paternalLastname'];
@@ -64,9 +79,11 @@ export class ProfesorEdicionComponent implements OnInit {
     this.profesor.email = this.form.value['email'];
     this.profesor.dni = this.form.value['dni'];
     this.profesor.phone = this.form.value['phone'];
-    this.profesor.educationDegree = this.form.value['educationDegree'];
+    this.profesor.educationDegree = nivel;
 
     if (this.edicion) {
+      this.selectedNivel = this.profesor.educationDegree.id;
+      this.selectedNivelText = this.profesor.educationDegree.grade;
       this.profesorService.modificar(this.profesor).subscribe(
         data => {
           this.profesorService.listar().subscribe(profesors => {

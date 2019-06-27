@@ -1,15 +1,17 @@
-import { Injectable } from '@angular/core';
-import { HOST } from '@angular/core/src/render3/interfaces/view';
 import { Subject } from 'rxjs';
-import { Course } from '../_model/curso';
 import { HttpClient } from '@angular/common/http';
+import { HOST } from './../_shared/var.constant';
+import { Injectable } from '@angular/core';
+import { Course } from '../_model/curso';
 
 @Injectable({
     providedIn: 'root'
 })
-export class CursoService {
-    url: string = `${HOST}/cursos`;
-    cursosCambio = new Subject<Course[]>();
+
+export class CourseService {
+    url: string = `${HOST}cursos`;
+    cursoCambio = new Subject<Course[]>();
+
     mensaje = new Subject<string>();
 
     constructor(private http: HttpClient) { }
@@ -18,19 +20,25 @@ export class CursoService {
         return this.http.get<Course[]>(this.url);
     }
 
-    listarCursoPorId(id: number) {
+    listarcursoPorId(id: number) {
         return this.http.get<Course>(`${this.url}/${id}`);
     }
-
-    registrar(curso: Course) {
-        return this.http.post(this.url, curso);
+    listarCursosPorNivel(id: number) {
+        return this.http.get<Course>(`${this.url}/grado/${id}`);
     }
 
-    modificar(curso: Course) {
-        return this.http.put(this.url, curso);
+
+    registrar(course: Course) {
+        return this.http.post(this.url, course);
+    }
+
+    modificar(course: Course) {
+        return this.http.put(this.url, course);
+
     }
 
     eliminar(id: number) {
         return this.http.delete(`${this.url}/${id}`);
     }
-}
+} 
+

@@ -27,22 +27,35 @@
     <input matInput placeholder="DNI" required formControlName="dni" type="number">
   </mat-form-field>
 
-  <h4>Grado Educativo</h4>
-  <mat-form-field>
-    <mat-label>Grado</mat-label>
-    <select matNativeControl required>
-      <option value="inicial">Inicial</option>
-      <option value="primaria">Primaria</option>
-      <option value="secundaria">Secundaria</option>
-    </select>
-  </mat-form-field>
+  <form>
+    <h4>Grado Educativo</h4>
+    <mat-form-field>
+      <mat-label>{{selectedNivelText}}</mat-label>
+      <mat-select [(ngModel)]="selectedNivel" name="grado">
+        <mat-option *ngFor="let grado of nivelesEducativos" [value]="grado.id">
+          {{grado.grade}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <h4>Asignar Apoderado</h4>
+    <mat-form-field>
+      <mat-label>{{selectedApoderadoText}}</mat-label>
+      <mat-select [(ngModel)]="selectedApoderado" name="apoderado">
+        <mat-option *ngFor="let apoderado of apoderados" [value]="apoderado.id">
+          {{apoderado.name + " "+apoderado.paternalLastname}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
 
   <!-- <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">-->
   <button mat-raised-button color="primary" type="submit">
     <mat-icon>done</mat-icon>
     <span>Aceptar</span>
   </button>
-  <button mat-raised-button color="accent" routerLink='/paciente' type="button">
+  <button mat-raised-button color="accent" routerLink='/estudiante' type="button">
     <mat-icon>close</mat-icon>
     <span>Cancelar</span>
   </button>
