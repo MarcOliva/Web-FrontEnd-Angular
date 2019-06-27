@@ -7,7 +7,7 @@ import { EducationDegree } from '../_model/nivelEducativo';
 @Injectable({
     providedIn: 'root'
 })
-export class NivelEducativo {
+export class NivelEducativoService {
     url: string = `${HOST}niveleducativo`;
     nivelEduactivoCambio = new Subject<EducationDegree[]>();
     mensaje = new Subject<string>();

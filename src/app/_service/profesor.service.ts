@@ -10,7 +10,7 @@ import { Teacher } from '../_model/profesor';
 })
 export class ProfesorService {
     url: string = `${HOST}/profesores`;
-    profesorCambio = new Subject<Teacher[]>();
+    profesoresCambio = new Subject<Teacher[]>();
     mensaje = new Subject<string>();
 
     constructor(private http: HttpClient) { }
