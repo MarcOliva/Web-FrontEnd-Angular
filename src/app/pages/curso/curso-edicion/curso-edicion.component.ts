@@ -49,7 +49,10 @@ export class CursoEdicionComponent implements OnInit {
       this.cursoService.listarcursoPorId(this.id).subscribe(data => {
         this.form = new FormGroup({
           'id': new FormControl(data.id),
+
+
           'nombre': new FormControl(data.name),
+
         });
         this.selectedNivel = data.educationLevel.id;
         this.selectedNivelText = data.educationLevel.grade;
@@ -63,8 +66,10 @@ export class CursoEdicionComponent implements OnInit {
     let nivel = new EducationDegree();
     nivel.id = this.selectedNivel;
     this.curso.id = this.form.value['id'];
+
     this.curso.name = this.form.value['nombre'];
     this.curso.educationLevel = nivel;
+
 
     console.log(this.curso)
     if (this.edicion) {

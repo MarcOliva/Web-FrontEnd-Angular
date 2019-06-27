@@ -1,9 +1,11 @@
+
 <mat-card>Ingrese los datos del curso</mat-card>
 
 <br>
 
 
 <form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmPaciente="ngForm">
+
 
   <div [hidden]="true">
     <mat-form-field class="example-full-width">
@@ -12,6 +14,7 @@
   </div>
 
   <mat-form-field class="example-full-width">
+
     <input matInput placeholder="Nombre" required formControlName="nombre">
   </mat-form-field>
 
@@ -27,12 +30,15 @@
     </mat-form-field>
   </form>
 
+
   <!-- <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">-->
   <button mat-raised-button color="primary" type="submit">
     <mat-icon>done</mat-icon>
     <span>Aceptar</span>
   </button>
+
   <button mat-raised-button color="accent" routerLink='/curso' type="button">
+
     <mat-icon>close</mat-icon>
     <span>Cancelar</span>
   </button>

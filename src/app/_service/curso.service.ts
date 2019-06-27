@@ -7,9 +7,11 @@ import { Course } from '../_model/curso';
 @Injectable({
     providedIn: 'root'
 })
+
 export class CourseService {
     url: string = `${HOST}cursos`;
     cursoCambio = new Subject<Course[]>();
+
     mensaje = new Subject<string>();
 
     constructor(private http: HttpClient) { }
@@ -32,9 +34,11 @@ export class CourseService {
 
     modificar(course: Course) {
         return this.http.put(this.url, course);
+
     }
 
     eliminar(id: number) {
         return this.http.delete(`${this.url}/${id}`);
     }
 } 
+

@@ -9,6 +9,7 @@ import { EducationDegree } from '../_model/nivelEducativo';
 })
 export class NivelEducativoService {
     url: string = `${HOST}grados`;
+
     nivelEduactivoCambio = new Subject<EducationDegree[]>();
     mensaje = new Subject<string>();
 

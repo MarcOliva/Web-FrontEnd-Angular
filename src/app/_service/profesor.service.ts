@@ -4,12 +4,12 @@ import { HOST } from './../_shared/var.constant';
 import { Injectable } from '@angular/core';
 import { Teacher } from '../_model/profesor';
 
+
 @Injectable({
     providedIn: 'root'
 })
 export class ProfesorService {
-
-    url: string = `${HOST}profesores`;
+    url: string = `${HOST}/profesores`;
     profesoresCambio = new Subject<Teacher[]>();
     mensaje = new Subject<string>();
 

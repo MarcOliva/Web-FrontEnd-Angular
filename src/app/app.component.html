@@ -28,19 +28,44 @@
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav #sidenav mode="side" style="width: 200px">
 
-      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/estudiante" style="cursor: pointer">
-        <mat-icon>insert_drive_file</mat-icon>
-        <span>Estudiante</span>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/buscar" style="cursor: pointer">
+        <mat-icon>search</mat-icon>
+        <span>Buscar</span>
       </button>
       <mat-divider></mat-divider>
-      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/apoderado" style="cursor: pointer">
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/course" style="cursor: pointer">
         <mat-icon>insert_drive_file</mat-icon>
-        <span> Apoderado</span>
+        <span>Curso</span>
       </button>
       <mat-divider></mat-divider>
-      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/profesor" style="cursor: pointer">
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta-especial" style="cursor: pointer">
         <mat-icon>insert_drive_file</mat-icon>
-        <span>Profesor</span>
+        <span>Registrar E.</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/especialidad" style="cursor: pointer">
+        <mat-icon>star_rate</mat-icon>
+        <span>Especialidades</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/medico" style="cursor: pointer">
+        <mat-icon>healing</mat-icon>
+        <span>Médicos</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/qualification" style="cursor: pointer">
+        <mat-icon>assignment</mat-icon>
+        <span>Calificaciones</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/paciente" style="cursor: pointer">
+        <mat-icon>accessibility</mat-icon>
+        <span>Pacientes</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item (click)="sidenav.toggle()" routerLink="/reporte" style="cursor: pointer">
+        <mat-icon>assessment</mat-icon>
+        <span>Reportes</span>
       </button>
       <mat-divider></mat-divider>
       <button mat-menu-item (click)="sidenav.toggle()" routerLink="/curso" style="cursor: pointer">

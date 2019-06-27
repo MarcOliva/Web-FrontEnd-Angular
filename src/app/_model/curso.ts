@@ -5,3 +5,4 @@ export class Course {
     public name: string;
     public educationLevel: EducationDegree;
 } 
+
